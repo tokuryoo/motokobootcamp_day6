@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "motokobootcamp_day6_backend": {
+      "main": "src/motokobootcamp_day6_backend/main.mo",
+      "type": "motoko"
+    },
+    "motokobootcamp_day6_frontend": {
+      "dependencies": [
+        "motokobootcamp_day6_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/motokobootcamp_day6_frontend/src/index.html"
+      },
+      "source": [
+        "src/motokobootcamp_day6_frontend/assets",
+        "dist/motokobootcamp_day6_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
