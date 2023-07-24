@@ -94,9 +94,11 @@ document.getElementById("login").onclick = async () => {
     // https://internetcomputer.org/docs/current/developer-docs/integrations/internet-identity/integrate-identity/#using-the-auth-client-library-to-log-in-with-internet-identity
     authClient = await AuthClient.create();
     await new Promise((resolve, reject) => {
-      // TODO ローカル用
-      // identityProvider: "http://localhost:8080/#authorize",
       authClient.login({
+        // ローカル用
+        // TODO ハードコードしない
+        // 参考 https://github.com/dfinity/examples/tree/master/motoko/internet_identity_integration
+        identityProvider: "http://127.0.0.1:4943/?canisterId=bkyz2-fmaaa-aaaaa-qaaaq-cai",
         onSuccess: async () => {
           const authenticated = await authClient.isAuthenticated();
           console.log("login - authenticated", authenticated);
